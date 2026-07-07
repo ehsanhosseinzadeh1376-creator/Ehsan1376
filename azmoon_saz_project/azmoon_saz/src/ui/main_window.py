@@ -138,7 +138,22 @@ class MainWindow(ctk.CTk):
             if k in self.nav_buttons:
                 self.nav_buttons[k].configure(fg_color='transparent')
         if key in self.views:
-            self.views[key].grid()
+            view = self.views[key]
+            view.grid()
+
+            # Slide up animation
+            view.place(relx=0, rely=0.04, relwidth=1, relheight=0.96)
+
+            def animate(step=1):
+                if step <= 8:
+                    y = 0.04 - (step * 0.005)
+                    view.place(relx=0, rely=max(0, y), relwidth=1, relheight=1-max(0, y))
+                    self.after(10, lambda: animate(step + 1))
+                else:
+                    view.place(relx=0, rely=0, relwidth=1, relheight=1)
+
+            animate()
+
             self.nav_buttons[key].configure(fg_color='#2a2f4a')
             self.current_view_key = key
             if hasattr(self.views[key], 'on_show'):
