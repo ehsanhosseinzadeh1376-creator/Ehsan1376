@@ -51,7 +51,7 @@ class MainWindow(ctk.CTk):
         logo = ctk.CTkLabel(
             self.sidebar,
             text=fa('آزمون‌ساز هوشمند'),
-            font=(FONT, 22, 'bold'),
+            font=(FONT, 24, 'bold'),
             text_color='#7c93ff',
         )
         logo.pack(pady=(30, 4))
@@ -101,7 +101,7 @@ class MainWindow(ctk.CTk):
                 fg_color='transparent',
                 hover_color='#2a2f4a',
                 text_color='#e6e8ef',
-                font=(FONT, 15),
+                font=(FONT, 16, 'medium'),
                 command=lambda k=key: self.show_view(k),
             )
             btn.pack(fill='x', padx=16, pady=5)

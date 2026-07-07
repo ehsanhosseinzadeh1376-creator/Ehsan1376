@@ -38,7 +38,7 @@ class PdfView(ctk.CTkFrame):
 
         title = ctk.CTkLabel(
             header, text=fa('بارگذاری PDF و تولید سوال'),
-            font=(FONT, 22, 'bold'), text_color='#e6e8ef', anchor='e', justify='right'
+            font=(FONT, 24, 'bold'), text_color='#e6e8ef', anchor='e', justify='right'
         )
         title.grid(row=0, column=0, sticky='ew', padx=24, pady=(18, 4))
 
@@ -104,10 +104,10 @@ class PdfView(ctk.CTkFrame):
         self.lesson_panel.grid_rowconfigure(1, weight=1)
         self.lesson_panel.grid_columnconfigure(0, weight=1)
         ctk.CTkLabel(self.lesson_panel, text=fa('📖 درسنامه استخراج‌شده'),
-                     font=(FONT, 16, 'bold'), text_color='#7c93ff', anchor='e', justify='right'
+                     font=(FONT, 18, 'bold'), text_color='#7c93ff', anchor='e', justify='right'
                      ).grid(row=0, column=0, sticky='ew', padx=18, pady=(16, 8))
         # NOTE: For textboxes with Persian, DO NOT reshape - use raw text with proper font
-        self.lesson_text = ctk.CTkTextbox(self.lesson_panel, font=(FONT, 13),
+        self.lesson_text = ctk.CTkTextbox(self.lesson_panel, font=(FONT, 15),
                                           fg_color='#0f1120', text_color='#dfe2ec',
                                           wrap='word', corner_radius=10)
         self.lesson_text.grid(row=1, column=0, sticky='nsew', padx=16, pady=(0, 16))
@@ -118,7 +118,7 @@ class PdfView(ctk.CTkFrame):
         self.source_panel.grid_rowconfigure(1, weight=1)
         self.source_panel.grid_columnconfigure(0, weight=1)
         ctk.CTkLabel(self.source_panel, text=fa('❓ سوالات موجود در PDF'),
-                     font=(FONT, 16, 'bold'), text_color='#f2a44d', anchor='e', justify='right'
+                     font=(FONT, 18, 'bold'), text_color='#f2a44d', anchor='e', justify='right'
                      ).grid(row=0, column=0, sticky='ew', padx=18, pady=(16, 8))
         self.source_list = ctk.CTkScrollableFrame(self.source_panel, fg_color='#0f1120', corner_radius=10)
         self.source_list.grid(row=1, column=0, sticky='nsew', padx=16, pady=(0, 8))
